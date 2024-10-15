@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер QR-кодов WhatsApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fab fa-whatsapp"></i> Менеджер QR-кодов WhatsApp</h1>
+        </header>
+        <main>
+            <section id="qrCodeSection">
+                <h2>QR-код</h2>
+                <div id="qrCode" class="qr-code-container"></div>
+                <p id="status" class="status"></p>
+            </section>
+            <section id="sessionsSection">
+                <h2>Активные сессии</h2>
+                <div id="sessions" class="sessions-list"></div>
+            </section>
+            <section id="warmupSection">
+                <h2>Статус прогрева</h2>
+                <div id="warmupInfo"></div>
+            </section>
+            <section id="consoleSection">
+                <h2>Консоль прогрева</h2>
+                <div id="console" class="console-container"></div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>

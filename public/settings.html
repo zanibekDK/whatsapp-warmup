@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки прогрева WhatsApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fab fa-whatsapp"></i> Настройки прогрева WhatsApp</h1>
+            <nav>
+                <a href="/" class="btn">Главная</a>
+            </nav>
+        </header>
+        <main>
+            <section id="settingsSection">
+                <h2>Настройки интервала отправки сообщений</h2>
+                <form id="settingsForm">
+                    <div class="form-group">
+                        <label for="intervalMin">Минимальный интервал (в минутах):</label>
+                        <input type="number" id="intervalMin" name="intervalMin" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="intervalMax">Максимальный интервал (в минутах):</label>
+                        <input type="number" id="intervalMax" name="intervalMax" min="1" required>
+                    </div>
+                    <button type="submit" class="btn">Сохранить настройки</button>
+                </form>
+            </section>
+            <section id="warmupSection">
+                <h2>Управление прогревом</h2>
+                <button id="startWarmup" class="btn">Запустить прогрев</button>
+                <button id="stopWarmup" class="btn">Остановить прогрев</button>
+            </section>
+            <section id="warmupHistorySection" style="display: none;">
+                <h2>История прогрева</h2>
+                <div id="warmupHistory" class="scrollable-list"></div>
+                <div id="nextMessageInfo"></div>
+                <div id="warmupStats"></div>
+            </section>
+            <section id="warmupStatus">
+                <h2>Статус прогрева</h2>
+                <div id="warmupInfo"></div>
+            </section>
+            <section id="activeSessions">
+                <h2>Активные сессии</h2>
+                <div id="sessions"></div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Менеджер QR-кодов WhatsApp. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <!-- Добавьте это модальное окно в конец body -->
+    <div id="warmupHistoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>История прогрева</h2>
+            <div id="warmupHistory" class="scrollable-list"></div>
+            <div id="nextMessageInfo"></div>
+            <div id="warmupStats"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="/settings.js"></script>
+</body>
+</html>
